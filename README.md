@@ -130,3 +130,36 @@ If successful it returns a JSON object
 ```
 
 AWS Access Key need to be generated for the appropriate IAM user on the AWS Console.
+
+## Terraform Basics
+
+Infrastructure as Code -
+
+### [Terraform Registry](https://registry.terraform.io/)
+
+Terraform stores providers and modules (plus extra bits) in its registry.
+
+- _Providers_ are interfaces for the likes of AWS, Azure, GCP etc. and give use a way to create resources
+- _Modules_ are a way to make large TF files modular and reusable
+
+### Terraform CLI
+
+To acquire the our provider binaries we should always run `terraform init`
+To plan we run `terraform plan`
+To apply we run `terraform apply` - then confirm/deny as appropriate or use the `--auto-approve` flag
+
+- `.terraform` contains binaries
+- `.terraform.lock.hcl` contains provider versions - **should be commited**
+- `terraform.tfstate` contains current state of our infra - _**should not be commited**_ as it can contains sensitive information
+- `terraform.backup.tfstate` previous version of state - _**don't commit**_
+
+[more details on CLI](https://developer.hashicorp.com/terraform/cli/commands)
+
+### Example provider
+
+[Terraform Random Provider](https://registry.terraform.io/providers/hashicorp/random/latest/docs)
+
+### Output details from executed terraform
+
+We can write out
+[Terraform Outputs Documentation](https://developer.hashicorp.com/terraform/language/values/outputs)

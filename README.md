@@ -147,6 +147,7 @@ Terraform stores providers and modules (plus extra bits) in its registry.
 To acquire the our provider binaries we should always run `terraform init`
 To plan we run `terraform plan`
 To apply we run `terraform apply` - then confirm/deny as appropriate or use the `--auto-approve` flag
+To destroy our infra we run `terraform destroy` - it will tear everything down - `--auto-approve` works here too
 
 - `.terraform` contains binaries
 - `.terraform.lock.hcl` contains provider versions - **should be commited**
@@ -161,5 +162,5 @@ To apply we run `terraform apply` - then confirm/deny as appropriate or use the 
 
 ### Output details from executed terraform
 
-We can write out
+We can write out information created by terraform
 [Terraform Outputs Documentation](https://developer.hashicorp.com/terraform/language/values/outputs)

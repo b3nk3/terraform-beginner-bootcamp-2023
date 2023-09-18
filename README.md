@@ -128,3 +128,5 @@ If successful it returns a JSON object
   "Arn": "arn:aws:iam::123456789012:user/benszabo"
 }
 ```
+
+AWS Access Key need to be generated for the appropriate IAM user on the AWS Console.

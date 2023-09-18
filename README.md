@@ -47,8 +47,61 @@ To make our script executable, we need to run: `chmod +x ./bin/install_terraform
 Tell the OS how to run our program.
 [More info](<https://en.wikipedia.org/wiki/Shebang_(Unix)>)
 
-### Gitpod lifecycle
+### Gitpod lifecycle
 
 To allow for our tools (TF/AWS CLIs) to install on workspace restart, we call the install from a `before` section
 
 [Execution order](https://www.gitpod.io/docs/configure/workspaces/tasks#execution-order)
+
+### Working with env vars
+
+#### env command
+
+We can list out all env vars using `env` command
+We can filter env vars by piping to grep eg. `env | grep AWS_`
+
+#### set/unset env vars
+
+In terminal we can set with
+
+```sh
+export HELLO=World
+```
+
+Unset with
+
+```sh
+unset HELLO
+```
+
+Temporarily for the script we are running on command line
+
+```sh
+HELLO='world' ./bin/my_script.sh
+```
+
+Within `.sh` file without export keyword
+
+```sh
+#!/usr/bin/env bash
+
+HELLO=World
+
+echo $HELLO
+```
+
+#### Scoping env vars
+
+Env vars are scoped to individual terminal windows. If you want to use them across windows, we need to set them globally.
+
+#### Persisting env vars in Gitpod
+
+Env vars can be persisted in Gitpod Secrets Storage.
+
+```sh
+gp env HELLO='world'
+```
+
+All future workspaces will set the env vars for all terminals opened.
+
+non sensitive env vars can also be set in `.gitpod.yml`

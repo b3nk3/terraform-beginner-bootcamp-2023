@@ -164,3 +164,8 @@ To destroy our infra we run `terraform destroy` - it will tear everything down -
 
 We can write out information created by terraform
 [Terraform Outputs Documentation](https://developer.hashicorp.com/terraform/language/values/outputs)
+
+### Terraform Cloud issues
+
+- `terrafrom login` token generation is manual in due to some Gitpod issues
+- TF Cloud defaults to remote run, which fails due to lacking AWS auth something or other - short term solution is to switch the workspace to `local` execution

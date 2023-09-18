@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "bencodes"
+
+    workspaces {
+      name = "terra-house-3"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"

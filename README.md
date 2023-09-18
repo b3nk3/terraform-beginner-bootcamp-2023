@@ -144,6 +144,8 @@ Terraform stores providers and modules (plus extra bits) in its registry.
 
 ### Terraform CLI
 
+_NOTE_: We've aliased the `terraform` command to `tf` in our project.
+
 To acquire the our provider binaries we should always run `terraform init`
 To plan we run `terraform plan`
 To apply we run `terraform apply` - then confirm/deny as appropriate or use the `--auto-approve` flag

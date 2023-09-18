@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd /workplace
+cd /workspace
 
 sudo apt-get update && sudo apt-get install -y gnupg software-properties-common
 

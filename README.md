@@ -167,5 +167,5 @@ We can write out information created by terraform
 
 ### Terraform Cloud issues
 
-- `terrafrom login` token generation is manual in due to some Gitpod issues
 - TF Cloud defaults to remote run, which fails due to lacking AWS auth something or other - short term solution is to switch the workspace to `local` execution
+- Automated TF Cloud authentication file generation

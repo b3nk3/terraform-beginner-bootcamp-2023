@@ -20,3 +20,11 @@ PROJECT_ROOT
 Two types can be set `environment variables` and `terraform variables`. They can be set to sensitive, which makes them read only once set.
 
 _Note_:If the run is set to `local` for the project, the `Variables` menu is not available in the settings panel
+
+## Dealing with configuration drift
+
+If resources are altered manually, ie. via ClickOps, TF will try to restore it based on the state file when ran it.
+
+### Fixing missing resources with `Terraform Import`
+
+If we want to pull ClickOps resources into TF, we can try [Terrafrom Import](https://developer.hashicorp.com/terraform/cli/import)

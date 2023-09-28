@@ -14,3 +14,9 @@ PROJECT_ROOT
 ```
 
 [Standard module structure](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
+
+## Terraform Cloud variables
+
+Two types can be set `environment variables` and `terraform variables`. They can be set to sensitive, which makes them read only once set.
+
+_Note_:If the run is set to `local` for the project, the `Variables` menu is not available in the settings panel

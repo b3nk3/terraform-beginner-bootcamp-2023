@@ -1,5 +1,31 @@
 # Terraform Beginner Bootcamp 2023
 
+## Table of contents
+
+- [Terraform Beginner Bootcamp 2023](#terraform-beginner-bootcamp-2023)
+  - [Table of contents](#table-of-contents)
+  - [Commit messages](#commit-messages)
+  - [Versioning](#versioning)
+  - [Install Terraform CLI](#install-terraform-cli)
+    - [Considerations for Linux Distros - Changes to the CLI installation](#considerations-for-linux-distros---changes-to-the-cli-installation)
+    - [Refactoring into bash script](#refactoring-into-bash-script)
+      - [Linux permissions](#linux-permissions)
+      - [Shebang](#shebang)
+    - [Gitpod lifecycle](#gitpod-lifecycle)
+    - [Working with env vars](#working-with-env-vars)
+      - [env command](#env-command)
+      - [set/unset env vars](#setunset-env-vars)
+      - [Scoping env vars](#scoping-env-vars)
+      - [Persisting env vars in Gitpod](#persisting-env-vars-in-gitpod)
+    - [AWS CLI installation](#aws-cli-installation)
+      - [Check if logged in to AWS](#check-if-logged-in-to-aws)
+  - [Terraform Basics](#terraform-basics)
+    - [Terraform Registry](#terraform-registry)
+    - [Terraform CLI](#terraform-cli)
+    - [Example provider](#example-provider)
+    - [Output details from executed terraform](#output-details-from-executed-terraform)
+    - [Terraform Cloud issues](#terraform-cloud-issues)
+
 ## Commit messages
 
 For clean commit messages we're using [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).

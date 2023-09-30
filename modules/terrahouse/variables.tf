@@ -17,3 +17,23 @@ variable "bucket_name" {
     error_message = "AWS S3 Bucket Name must consist of lowercase letters, numbers, hyphens, and periods and be between 3 and 63 characters in length."
   }
 }
+
+variable "index_html_filepath" {
+  description = "Filepath to the index.html file"
+  type        = string
+
+  validation {
+    condition     = fileexists(var.index_html_filepath)
+    error_message = "The provided path for index.html does not exist."
+  }
+}
+
+variable "error_html_filepath" {
+  description = "Filepath to the error.html file"
+  type        = string
+
+  validation {
+    condition     = fileexists(var.error_html_filepath)
+    error_message = "The provided path for error.html does not exist."
+  }
+}

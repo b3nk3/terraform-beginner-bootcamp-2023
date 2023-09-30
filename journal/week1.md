@@ -33,3 +33,21 @@ If we want to pull ClickOps resources into TF, we can try [Terrafrom Import](htt
 
 Modules are the main way to package and reuse resource configurations with Terraform.
 [More info](https://developer.hashicorp.com/terraform/language/modules)
+
+## Working with files in Terraform
+
+There are a lot of functions available on [https://developer.hashicorp.com/terraform/language/functions/](https://developer.hashicorp.com/terraform/language/functions/)
+
+### path
+
+There is a special variable in Terraform called `path`, that allows us to reference local paths.
+
+[Terraform `path` reference](https://developer.hashicorp.com/terraform/language/expressions/references#filesystem-and-workspace-info)
+
+### File changes
+
+Terraform does not monitor file content changes. The way to have it check for changes in files is using an [`ETag`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) and its value a file's `md5` hash using the Terraform function [`filemd5`](https://developer.hashicorp.com/terraform/language/functions/filemd5)
+
+### Consideration
+
+Managing files with Terraform is not necessarily considered a best practice - use common sense.

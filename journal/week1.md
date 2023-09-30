@@ -28,3 +28,8 @@ If resources are altered manually, ie. via ClickOps, TF will try to restore it b
 ### Fixing missing resources with `Terraform Import`
 
 If we want to pull ClickOps resources into TF, we can try [Terrafrom Import](https://developer.hashicorp.com/terraform/cli/import)
+
+## Terraform modules
+
+Modules are the main way to package and reuse resource configurations with Terraform.
+[More info](https://developer.hashicorp.com/terraform/language/modules)

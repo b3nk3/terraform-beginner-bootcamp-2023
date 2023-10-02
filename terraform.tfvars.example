@@ -1,4 +1,4 @@
 user_uuid="5cc42e22-2fd4-4a0a-8c7f-71f7804c79b9"
-bucket_name="my-very-unique-bucket-name-5cc42e22-2fd4-4a0a-8c7f-71f7804c79b9"
+bucket_name="my-unique-bucket-name-5cc42e22-2fd4-4a0a-8c7f-71f7804c79b9"
 index_html_filepath="/workspace/terraform-beginner-bootcamp-2023/public/index.html"
 error_html_filepath="/workspace/terraform-beginner-bootcamp-2023/public/error.html"

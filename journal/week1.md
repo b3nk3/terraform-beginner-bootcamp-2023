@@ -51,3 +51,14 @@ Terraform does not monitor file content changes. The way to have it check for ch
 ### Consideration
 
 Managing files with Terraform is not necessarily considered a best practice - use common sense.
+
+## Terraform locals sources
+
+Terraform local values (or "locals") assign a name to an expression or value. Using locals simplifies your Terraform configuration – since you can reference the local multiple times, you reduce duplication in your code. Locals can also help you write more readable configuration by using meaningful names rather than hard-coding values.
+
+[Reference](https://developer.hashicorp.com/terraform/tutorials/configuration-language/locals)
+
+## Terraform data sources
+
+Data sources allow Terraform to use information defined outside of Terraform, defined by another separate Terraform configuration, or modified by functions.
+[Reference](https://developer.hashicorp.com/terraform/language/data-sources)

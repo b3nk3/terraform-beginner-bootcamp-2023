@@ -70,3 +70,15 @@ Data sources allow Terraform to use information defined outside of Terraform, de
 ## terrafrom_data resource
 
 [Reference](https://developer.hashicorp.com/terraform/language/resources/terraform-data)
+
+## Provisioners
+
+Allow you to execute commands on compute instances e.g. AWS CLI command.
+NOT RECOMMENDED BY HASHICORP as config management tools like Ansible are better suited.
+
+Tho functionality exists.
+
+- `local-exec`: executes on the machine running the `terraform` command
+- `remote-exec`: executes on the specified machine. (Requires auth)
+
+[Reference](https://developer.hashicorp.com/terraform/language/resources/provisioners/syntax)

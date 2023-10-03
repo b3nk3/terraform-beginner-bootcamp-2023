@@ -34,11 +34,17 @@ resource "aws_s3_object" "error_html" {
   source       = var.error_html_filepath
   content_type = "text/html"
   etag         = filemd5(var.error_html_filepath)
-
-  # lifecycle {
-  #   replace_triggered_by = [terraform_data.content_version.output]
-  #   ignore_changes       = [etag]
-  # }
+}
+resource "aws_s3_object" "upload_assets" {
+  for_each = fileset("${var.assets_filepath}", "*.{jpg,png,gif}")
+  bucket   = aws_s3_bucket.website_bucket.bucket
+  key      = "assets/${each.key}"
+  source   = "${var.assets_filepath}/${each.key}"
+  etag     = filemd5("${var.assets_filepath}/${each.key}")
+  lifecycle {
+    replace_triggered_by = [terraform_data.content_version.output]
+    ignore_changes       = [etag]
+  }
 }
 
 resource "aws_s3_bucket_policy" "bucket_policy" {
@@ -55,7 +61,6 @@ resource "aws_s3_bucket_policy" "bucket_policy" {
       "Resource" : "arn:aws:s3:::${aws_s3_bucket.website_bucket.id}/*",
       "Condition" : {
         "StringEquals" : {
-          # "AWS:SourceArn" : "${aws_cloudfront_distribution.s3_distribution.arn}"
           "AWS:SourceArn" : "arn:aws:cloudfront::${data.aws_caller_identity.current.account_id}:distribution/${aws_cloudfront_distribution.s3_distribution.id}"
         }
       }

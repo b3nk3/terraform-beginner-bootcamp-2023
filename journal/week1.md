@@ -82,3 +82,9 @@ Tho functionality exists.
 - `remote-exec`: executes on the specified machine. (Requires auth)
 
 [Reference](https://developer.hashicorp.com/terraform/language/resources/provisioners/syntax)
+
+## for_each
+
+In Terraform, the for_each expression allows you to iterate over a list or map and create multiple instances of a resource or module based on the elements of that list or map. This is useful when you want to manage multiple similar resources or configurations in a more dynamic way.
+
+[Reference](https://developer.hashicorp.com/terraform/language/meta-arguments/for_each)

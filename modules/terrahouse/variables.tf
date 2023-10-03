@@ -21,11 +21,6 @@ variable "bucket_name" {
 variable "assets_filepath" {
   description = "Filepath to the index.html file"
   type        = string
-
-  validation {
-    condition     = fileexists(var.assets_filepath)
-    error_message = "The provided path for index.html does not exist."
-  }
 }
 variable "index_html_filepath" {
   description = "Filepath to the index.html file"

@@ -62,3 +62,11 @@ Terraform local values (or "locals") assign a name to an expression or value. Us
 
 Data sources allow Terraform to use information defined outside of Terraform, defined by another separate Terraform configuration, or modified by functions.
 [Reference](https://developer.hashicorp.com/terraform/language/data-sources)
+
+## Terraform Lifecycle
+
+[Reference](https://developer.hashicorp.com/terraform/tutorials/state/resource-lifecycle)
+
+## terrafrom_data resource
+
+[Reference](https://developer.hashicorp.com/terraform/language/resources/terraform-data)

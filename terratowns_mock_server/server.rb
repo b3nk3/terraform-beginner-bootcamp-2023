@@ -3,22 +3,38 @@ require 'json'
 require 'pry'
 require 'active_model'
 
+# global variable to mock a state/db for this dev server
+# Note: not a production ready solution
 $home = {}
+
 
 class Home
   include ActiveModel::Validations
   attr_accessor :town, :name, :description, :domain_name, :content_version
 
-  validates :town, presence: true
+
+  validates :town, presence: true,inclusion: { in: [
+    'cooker-cove',
+    'gamers-grotto',
+    'melomaniac-mansion',
+    'the-nomad-pad',
+    'video-valley',
+  ] }
+  # visible to all users
   validates :name, presence: true
+  # visible to all users
   validates :description, presence: true
+  # locked down to be from cloudfront.net
   validates :domain_name, 
     format: { with: /\.cloudfront\.net\z/, message: "domain must be from .cloudfront.net" }
     # uniqueness: true, 
-
+  
+  # has to be an integer
+  # making sure it's an incremental versof the current home 
   validates :content_version, numericality: { only_integer: true }
 end
 
+# extending a class from Sinatra Base to use the framework
 class TerraTownsMockServer < Sinatra::Base
 
   def error code, message
@@ -185,4 +201,5 @@ class TerraTownsMockServer < Sinatra::Base
   end
 end
 
+# run the server
 TerraTownsMockServer.run!

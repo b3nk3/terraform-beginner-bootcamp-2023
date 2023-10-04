@@ -11,6 +11,11 @@ tasks:
     before: |
       source ./bin/add_tf_alias.sh 
       source ./bin/install_aws_cli.sh
+  - name: sinatra
+    before: |
+      cd $PROJECT_ROOT/terratowns_mock_server
+      bundle install
+      bundle exec ruby server.rb
 
 vscode:
   extensions:

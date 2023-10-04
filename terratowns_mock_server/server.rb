@@ -13,7 +13,7 @@ class Home
   attr_accessor :town, :name, :description, :domain_name, :content_version
 
 
-  validates :town, presence: true,inclusion: { in: [
+  validates :town, presence: true, inclusion: { in: [
     'cooker-cove',
     'gamers-grotto',
     'melomaniac-mansion',
@@ -56,11 +56,11 @@ class TerraTownsMockServer < Sinatra::Base
   end
 
   def x_access_code
-    '9b49b3fb-b8e9-483c-b703-97ba88eef8e0'
+    return '9b49b3fb-b8e9-483c-b703-97ba88eef8e0'
   end
 
   def x_user_uuid
-    'e328f4ab-b99f-421c-84c9-4ccea042c7d1'
+    return 'e328f4ab-b99f-421c-84c9-4ccea042c7d1'
   end
 
   def find_user_by_bearer_token
@@ -180,6 +180,15 @@ class TerraTownsMockServer < Sinatra::Base
     unless home.valid?
       error 422, home.errors.messages.to_json
     end
+
+    $home = {
+      uuid: params[:uuid],
+      name: name,
+      town: $home[:town],
+      description: description,
+      domain_name: $home[:domain_name],
+      content_version: content_version
+    }
 
     return { uuid: params[:uuid] }.to_json
   end

@@ -6,3 +6,4 @@
 
 - [Week 0 journal](journal/week0.md)
 - [Week 1 journal](journal/week1.md)
+- [Week 1 journal](journal/week2.md)

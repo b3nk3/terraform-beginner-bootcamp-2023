@@ -1,5 +1,16 @@
-terratowns_endpoint="https://terratowns.cloud/api/"
-index_html_filepath="/workspace/terraform-beginner-bootcamp-2023/public/index.html"
-error_html_filepath="/workspace/terraform-beginner-bootcamp-2023/public/error.html"
-assets_filepath="/workspace/terraform-beginner-bootcamp-2023/public/assets"
-content_version=1
+terratowns_endpoint = "https://terratowns.cloud/api/"
+public_path         = "/workspace/terraform-beginner-bootcamp-2023/public"
+terrahomes = {
+  DIABLO_DEN_TERRAHOME = {
+    name            = "Diablo den"
+    description     = "Diablo is my favourite game"
+    town            = "missingo"
+    content_version = 1
+  }
+  MEDIUM_RAW = {
+    name            = "Medium raw"
+    description     = "Food experimentations"
+    town            = "missingo"
+    content_version = 1
+  }
+}

@@ -5,13 +5,13 @@ terraform {
       version = "1.0.0"
     }
   }
-  # cloud {
-  #   organization = "bencodes"
+  cloud {
+    organization = "bencodes"
 
-  #   workspaces {
-  #     name = "terra-house-3"
-  #   }
-  # }
+    workspaces {
+      name = "bens-terra-homes"
+    }
+  }
 }
 
 provider "terratowns" {
@@ -27,19 +27,22 @@ provider "terratowns" {
 }
 
 module "terrahome_aws" {
-  source              = "./modules/terrahouse"
-  user_uuid           = var.teacherseat_user_uuid
-  index_html_filepath = var.index_html_filepath
-  error_html_filepath = var.error_html_filepath
-  content_version     = var.content_version
-  assets_filepath     = var.assets_filepath
+  for_each        = var.terrahomes
+  source          = "./modules/terrahouse"
+  user_uuid       = var.teacherseat_user_uuid
+  content_version = each.value.content_version
+
+  index_html_filepath = "${var.public_path}/${each.key}/index.html"
+  error_html_filepath = "${var.public_path}/${each.key}/error.html"
+  assets_filepath     = "${var.public_path}/${each.key}/assets/"
 }
 
 resource "terratowns_home" "home" {
-  name            = "Diablo den"
-  description     = "Diablo is my favourite game"
-  domain_name     = module.terrahome_aws.cloudfront_url
-  town            = "missingo"
-  content_version = 1
+  for_each        = var.terrahomes
+  name            = each.value.name
+  description     = each.value.description
+  domain_name     = module.terrahome_aws[each.key].cloudfront_url
+  town            = each.value.town
+  content_version = each.value.content_version
 
 }

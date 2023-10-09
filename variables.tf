@@ -7,18 +7,15 @@ variable "terratowns_endpoint" {
 variable "teacherseat_user_uuid" {
   type = string
 }
-
-variable "index_html_filepath" {
-  type = string
-}
-variable "assets_filepath" {
-  type = string
-}
-
-variable "error_html_filepath" {
-  type = string
+variable "terrahomes" {
+  type = map(object({
+    name            = string
+    description     = string
+    town            = string
+    content_version = number
+  }))
 }
 
-variable "content_version" {
+variable "public_path" {
   type = string
 }

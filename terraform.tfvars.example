@@ -1,5 +1,28 @@
-terratowns_endpoint="https://terratowns.cloud/api/"
-index_html_filepath="/workspace/terraform-beginner-bootcamp-2023/public/index.html"
-error_html_filepath="/workspace/terraform-beginner-bootcamp-2023/public/error.html"
-assets_filepath="/workspace/terraform-beginner-bootcamp-2023/public/assets"
-content_version=1
+terratowns_endpoint = "https://terratowns.cloud/api/"
+public_path         = "/workspace/terraform-beginner-bootcamp-2023/public"
+terrahomes = {
+  TRANSPORT_TYCOON_TERRAHOME = {
+    name            = "Transport Tycoon"
+    description     = "A pixel art business simulation game from 1994"
+    town            = "gamer-grotto"
+    content_version = 1
+  }
+  BENS_RETRO_GAMES_TERRAHOME = {
+    name            = "Retro games from my childhood"
+    description     = "Played on a state of the art Intel Pentium I"
+    town            = "gamer-grotto"
+    content_version = 1
+  }
+  # DIABLO_DEN_TERRAHOME = {
+  #   name            = "Diablo den"
+  #   description     = "Diablo is my favourite game"
+  #   town            = "missingo"
+  #   content_version = 1
+  # }
+  # MEDIUM_RAW = {
+  #   name            = "Medium raw"
+  #   description     = "Food experimentations"
+  #   town            = "missingo"
+  #   content_version = 1
+  # }
+}

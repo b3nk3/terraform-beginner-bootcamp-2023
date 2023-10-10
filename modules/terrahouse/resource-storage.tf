@@ -36,7 +36,7 @@ resource "aws_s3_object" "error_html" {
   etag         = filemd5(var.error_html_filepath)
 }
 resource "aws_s3_object" "upload_assets" {
-  for_each = fileset("${var.assets_filepath}", "*.{jpg,png,gif}")
+  for_each = fileset("${var.assets_filepath}", "*.{jpg,jpeg,png,gif}")
   bucket   = aws_s3_bucket.website_bucket.bucket
   key      = "assets/${each.key}"
   source   = "${var.assets_filepath}/${each.key}"

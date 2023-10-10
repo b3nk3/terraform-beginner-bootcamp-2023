@@ -4,13 +4,13 @@ terrahomes = {
   TRANSPORT_TYCOON_TERRAHOME = {
     name            = "Transport Tycoon"
     description     = "A pixel art business simulation game from 1994"
-    town            = "gamer-grotto"
+    town            = "gamers-grotto"
     content_version = 1
   }
   BENS_RETRO_GAMES_TERRAHOME = {
     name            = "Retro games from my childhood"
     description     = "Played on a state of the art Intel Pentium I"
-    town            = "gamer-grotto"
+    town            = "gamers-grotto"
     content_version = 1
   }
   # DIABLO_DEN_TERRAHOME = {
